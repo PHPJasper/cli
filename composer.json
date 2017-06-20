@@ -1,0 +1,25 @@
+{
+  "name": "phpjasper/cli",
+  "description": "PHPJasper CLI",
+  "license": "MIT",
+  "keywords": [
+    "cli",
+    "reports",
+    "php-reports"
+  ],
+  "authors": [
+    {
+      "name": "Daniel Rodrigues (geekcom)",
+      "email": "danielrodrigues-ti@hotmail.com"
+    }
+  ],
+  "require": {
+    "symfony/console": "^3.3",
+    "guzzlehttp/guzzle": "^6.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "PHPJasperCommand\\": "src/Command"
+    }
+  }
+}
