@@ -4,7 +4,7 @@ namespace PHPJasperCommand;
 
 use GuzzleHttp\Client as GuzzleClient;
 
-class CheckApi
+class Branches
 {
     protected $guzzle;
 
@@ -13,9 +13,9 @@ class CheckApi
         $this->guzzle = new GuzzleClient();
     }
 
-    public function showLatestRelease()
+    public function listBranchesAvailable()
     {
-        $res = $this->guzzle->request('GET', 'https://api.github.com/repos/phpjasper/phpjasper/releases/latest', [
+        $res = $this->guzzle->request('GET', 'https://api.github.com/repos/phpjasper/phpjasper/branches', [
             'headers' => [
                 'Accept' => 'application/vnd.github.v3+json'
             ]
@@ -23,7 +23,11 @@ class CheckApi
 
         $jsonResponse = json_decode($res->getBody());
 
-        return $jsonResponse->name;
+        $result = '';
+        foreach ($jsonResponse as $j) {
+            $result .= $j->name . ' ';
+        }
+        return $result;
     }
 
 }
