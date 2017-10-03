@@ -9,5 +9,6 @@ A simple PHPjasper tool CLI.
 
 ### Commands:
 
-* Release:check - ( check the latest stable version )
+* php console.php Release:check - ( check the latest stable version )
+* php console.php Branches:list - ( List all available branches )
 
